@@ -8,6 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 import router from './router'
 
+// icon
+import '@/icons'
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
