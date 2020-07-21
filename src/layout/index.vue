@@ -1,15 +1,21 @@
 <template>
   <div class="app-wrapper">
-    <sidebar></sidebar>
+    <sidebar class="sidebar-container"/>
+    <div class="main-container">
+      <div class="fixed-header">
+        <navbar/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { Sidebar } from './components'
+import { Sidebar, Navbar } from './components'
 
 export default {
   components: {
-    Sidebar
+    Sidebar,
+    Navbar
   }
 }
 </script>

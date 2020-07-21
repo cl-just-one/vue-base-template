@@ -1,4 +1,4 @@
-import defaultSettings from '@/setting.js'
+import defaultSettings from '@/settings.js'
 
 const { showSettings, fixedHeader, sidebarLogo } = defaultSettings
 
@@ -10,9 +10,9 @@ const state = {
 
 const mutations = {
   CHANGE_SETTING: (state, {key, value}) => {
-    if (state.hasOwnProperty(key)) {
+    // if (state.hasOwnProperty(key)) {
       state[key] = value
-    }
+    // }
   }
 }
 

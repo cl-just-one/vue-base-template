@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Settings from './modules/settings'
+import app from './modules/app'
+import settings from './modules/settings'
+import getters from './getters'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    Settings
-  }
+    settings,
+    app
+  },
+  getters
 })
 
 export default store
