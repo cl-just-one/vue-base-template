@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-import Layout from '@/layout'
+import Layout from '@/layout';
 
 const constantRoutes = [
   {
@@ -22,22 +22,62 @@ const constantRoutes = [
     redirect: '/dashboard',
     children: [
       {
+        path: 'dashboard',
         name: 'Dashboard',
-        path: '/dashboard',
         component: () => import('@/views/dashboard/index'),
         meta: {
           title: 'Dashboard',
           icon: 'dashboard'
         }
       }
+      // {
+      //   path: 'home',
+      //   name: 'Home',
+      //   component: () => import('@/views/home/index'),
+      //   meta: {
+      //     title: 'Home',
+      //     icon: 'user'
+      //   }
+      // }
+    ]
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: Layout,
+    redirect: '/test/home',
+    meta: {
+      title: 'test',
+      icon: 'example'
+    },
+    children: [
+      {
+        path: 'home',
+        name: 'Home',
+        component: () => import('@/views/home/index'),
+        meta: {
+          title: 'Home',
+          icon: 'user'
+        }
+      },
+      {
+        path: 'example',
+        name: 'Example',
+        component: () => import('@/views/example/index'),
+        meta: {
+          title: 'Example',
+          icon: 'example'
+        }
+      }
     ]
   }
-]
+];
 
-const createRouter = () => new VueRouter({
-  routes: constantRoutes
-})
+const createRouter = () =>
+  new VueRouter({
+    routes: constantRoutes
+  });
 
-const router = createRouter()
+const router = createRouter();
 
-export default router
+export default router;
