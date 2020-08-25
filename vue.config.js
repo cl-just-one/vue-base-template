@@ -4,6 +4,14 @@ function resolve(dir) {
 }
 
 module.exports = {
+  devServer: {
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    before: require('./mock/mock-server.js')
+  },
   chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');
     // 清除已有的所有 loader。

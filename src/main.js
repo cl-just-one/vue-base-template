@@ -13,6 +13,7 @@ import router from './router'
 
 // icon
 import '@/icons'
+import '@/permission'
 
 Vue.config.productionTip = false
 
